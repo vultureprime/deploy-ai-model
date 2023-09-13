@@ -75,7 +75,7 @@ https://github.com/vultureprime/deploy-ai-model.git && cd ./deploy-ai-model/pape
 ```
 9. Run 
 ```
-python3 app.py
+mkdir falcon-40b && python3 app.py
 ```
 ## License 
 MIT
