@@ -12,6 +12,9 @@
 - Inference Performance Benchmark (อนาคต)
 
 ## Update 
+0.0.2
+- Update Tutorial Falcon-40b0-instruct-8bit (Pytorch) on [Paperspace](https://paperspace.com/)
+
 0.0.1
 - Update Tutorial OpenThaiGPT 1.0.0 Beta on [Beam](https://beam.cloud)
 
