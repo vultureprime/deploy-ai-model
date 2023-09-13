@@ -72,7 +72,7 @@ pip3 install torch torchvision torchaudio transformers accelerate bitsandbytes e
 
 8. Git clone 
 ```
-https://github.com/vultureprime/deploy-ai-model.git && cd ./deploy-ai-model/paperspace-example/openthaigpt-1.0.0-beta-pytorch
+https://github.com/vultureprime/deploy-ai-model.git && cd ./deploy-ai-model/paperspace-example/openthaigpt-1.0.0-beta-8bit-pytorch
 ```
 9. Run 
 ```
