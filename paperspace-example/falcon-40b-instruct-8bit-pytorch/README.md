@@ -56,6 +56,7 @@ sudo systemctl restart docker
 sudo docker run -itd --runtime=nvidia --gpus all -v /home/paperspace:/workspace nvcr.io/nvidia/pytorch:22.08-py3
 ```
 > ถ้ารัน  Docker แล้ว User ยังไม่เปลี่ยนเป็น Docker container สามารถใช้คำสั่ง docker exec -it {container_id} bash
+
 > docker exec -it 4fa bash (ตัวอย่าง)
 6. Verify Driver เมื่อรันคำสั่งแล้ว Cuda ควรเป็น Version 11.7
 ```
