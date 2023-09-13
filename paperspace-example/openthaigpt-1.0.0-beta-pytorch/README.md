@@ -67,7 +67,7 @@ nvidia-smi
 7. Upgrade pytorch จาก Version 1.x เป็น Version 2.x และติดตั้ง Library ที่จำเป็น
 ```
 pip3 uninstall torch 
-pip3 install torch torchvision torchaudio transformers accelerate bitsandbytes einops
+pip3 install torch torchvision torchaudio transformers[sentencepiece] accelerate bitsandbytes einops git+https://github.com/huggingface/peft.git
 ```
 
 8. Git clone 
