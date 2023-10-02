@@ -13,7 +13,11 @@
 ```
 https://github.com/vultureprime/deploy-ai-model.git && cd ./deploy-ai-model/paperspace-example/openai-langchain-basic-RAG
 ```
-4. Run 
+4. สร้างไฟล์ .env สำหรับเก็บ OpenAI key 
+```
+echo >> .env OPENAI_API_KEY = 'xxxxxx'
+```
+5. Run 
 ```
 uvicorn app:app --reload --host 0.0.0.0 --port 3000
 ```
