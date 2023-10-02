@@ -15,13 +15,13 @@ async def helloworld():
     return {"message": "Hello World"}
 
 @app.get("/loadAndStore")
-async def load_and_store(url : str = 'https://lilianweng.github.io/posts/2023-06-23-agent', chunk_size : int = 1024, chunk_overlap : int = 0):
-    loader = WebBaseLoader(url) # URL to load
+async def load_and_store(url : str = 'https://lilianweng.github.io/posts/2023-06-23-agent', chunk_size : int = 1024, chunk_overlap : int = 0, collection_name : str = 'temp1'):
+    loader = WebBaseLoader(url) 
     data = loader.load()
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size = chunk_size, chunk_overlap = chunk_overlap) #Create text_splitter_engine chunk_size is the size of chunk and chunk_overlap is the overlap between chunks.
-    all_splits = text_splitter.split_documents(data) #split text into chunk.
-    vectorstore = Chroma.from_documents(documents=all_splits, embedding=OpenAIEmbeddings(),persist_directory='./chroma_db') #Embedding text into vector and store it in vectorstore.
-    return {"Message": "Hello World"}
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size = chunk_size, chunk_overlap = chunk_overlap) 
+    all_splits = text_splitter.split_documents(data) 
+    Chroma.from_documents(collection_name=collection_name,documents=all_splits, embedding=OpenAIEmbeddings(),persist_directory='./chroma_db') 
+    return {"Message": "Completed"}
 
 @app.get("/peekDocument")
 async def peek_document(collection_name : str = 'temp1'):
