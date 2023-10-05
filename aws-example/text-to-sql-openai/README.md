@@ -3,7 +3,7 @@
 #### Tutorial by [![N|Solid](https://vultureprime-research-center.s3.ap-southeast-1.amazonaws.com/vulturePrimeLogo.png)](https://vultureprime.com)
 
 ## บทความ
-- [วิธีการสร้าง Text-to-SQL เชื่อมต่อ Athena [พร้อม Code ตัวอย่าง]](https://vultureprime.com/how-to/)
+- [วิธีการสร้าง Text-to-SQL เชื่อมต่อ Athena [พร้อม Code ตัวอย่าง]](https://www.vultureprime.com/how-to/how-to-build-text-to-sql-with-llamaindex-and-athena)
 
 ## สิ่งที่ต้องมี
 - [AWS](https://aws.amazon.com/) Account 
