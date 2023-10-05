@@ -12,6 +12,9 @@
 - Inference Performance Benchmark (อนาคต)
 
 ## Update 
+0.0.5
+- Update Tutorial text-to-sql-openai on [AWS](https://paperspace.com/)
+
 0.0.4
 - Update Tutorial Openai-langchain-basic-RAG on [Paperspace](https://paperspace.com/)
 
