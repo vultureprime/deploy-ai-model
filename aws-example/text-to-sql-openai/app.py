@@ -1,10 +1,11 @@
 import os 
 import boto3
 import dotenv
+import json
 from fastapi import FastAPI
 from sqlalchemy import func, select, text
 from sqlalchemy.engine import create_engine
-from llama_index import SQLDatabase
+from llama_index import SQLDatabase,ServiceContext
 from llama_index.indices.struct_store import NLSQLTableQueryEngine
 from llama_index.llms import OpenAI
 
@@ -25,7 +26,7 @@ async def helloworld():
     return {"message": "Hello World"}
 
 @app.get("/query")
-async def query(query_str : str = 'Which product is the best seller ?'):
+async def query(query_str : str = 'Write SQL in PrestoSQL format. Which month (order_purchase_timestamp) have the most order ?'):
     
     boto3.client(
         'athena',
@@ -34,38 +35,33 @@ async def query(query_str : str = 'Which product is the best seller ?'):
         region_name=AWS_REGION,
     )
 
-    OpenAI(
-        model="gpt-4",
-        temperature="0.9",
-        max_tokens="512",
-        api_key=OPENAI_API_KEY
-    )
+    llm = OpenAI(model="gpt-4",temperature=0, max_tokens=1024)
 
     conn_str = "awsathena+rest://:@athena.{region_name}.amazonaws.com:443/"\
             "{database}?s3_staging_dir={s3_staging_dir}?work_group={workgroup}"
 
     engine = create_engine(conn_str.format(
         region_name=AWS_REGION,
-        schema_name="default",
         s3_staging_dir=S3_STAGING_DIR,
         database=DATABASE,
         workgroup=WORKGROUP
     ))
-
+    service_context = ServiceContext.from_defaults(
+        llm=llm
+    )
     sql_database = SQLDatabase(engine, include_tables=[TABLE])
 
     query_engine = NLSQLTableQueryEngine(
         sql_database=sql_database,
         tables=[TABLE],
+        service_context=service_context
     )
     query_prompt = (query_str)
     response = query_engine.query(query_prompt)
 
-    print(response.metadata['sql_query'])
-    print(response.metadata)
-    print(response)
-
-    return {
-        "result": response,
-        "SQL Query": response.metadata['sql_query'],
+    result = {
+        "result": response.response,
+        "SQL Query": response.metadata['sql_query']
     }
+    
+    return json.dumps(result)
