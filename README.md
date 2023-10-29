@@ -15,6 +15,7 @@
 0.1.0
 - Add Deployment script FIRST TIME !!!
 - Gather all deployment script to one place.
+
 0.0.5
 - Update Tutorial text-to-sql-openai on [AWS](https://aws.amazon.com)
 
