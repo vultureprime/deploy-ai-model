@@ -3,19 +3,27 @@
 #### จัดทำโดย [![N|Solid](https://vultureprime-research-center.s3.ap-southeast-1.amazonaws.com/vulturePrimeLogo.png)](https://vultureprime.com)
 
 ## Features
-- Check instance requirement
-- Have a menu for choose an example
+- ตรวจสอบความถูกต้องของ GPU (Driver, Docker Runtime) 
+- Nvidia Driver
+- Nvidia Docker Runtime
+- LLMs Dependency & Library 
 
 ## How to use
-- add execute permission
+- Add execute permission
 ```
 chmod +x deploy.sh
 ```
 
-- execute script
+- Execute script
 ```
-./deploy.sh
+sudo ./deploy.sh
 ```
+
+## Screenshot
+
+![](https://vultureprime-research-center.s3.ap-southeast-1.amazonaws.com/script-ss-1.png)
+![](https://vultureprime-research-center.s3.ap-southeast-1.amazonaws.com/script-ss-2.png)
+
 ## License
 MIT
 

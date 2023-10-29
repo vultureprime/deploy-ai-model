@@ -88,8 +88,8 @@ check_gpu_a10g(){
         echo "The gpu contains 'GA102GL[A10G]'."
         return 1
     else
-        echo "The gpu does not contain 'GA102GL[A10G] please use other instance type'."
-        exit 0
+        echo "The gpu does not contain 'GA102GL[A10G]'."
+        return 1
     fi
 }
 
