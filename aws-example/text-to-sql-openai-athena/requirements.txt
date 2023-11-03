@@ -1,0 +1,4 @@
+boto3==1.28.59
+sqlalchemy==2.0.21
+llama_index==0.8.39.post2
+pyathena==3.0.8

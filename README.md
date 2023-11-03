@@ -12,6 +12,9 @@
 - Inference Performance Benchmark (อนาคต)
 
 ## Update 
+0.1.1
+- Update Tutorial text-to-sql-openai-postgresSQL on [AWS](https://aws.amazon.com/)
+
 0.1.0
 - Add Deployment script FIRST TIME !!!
 - Gather all deployment script to one place.
