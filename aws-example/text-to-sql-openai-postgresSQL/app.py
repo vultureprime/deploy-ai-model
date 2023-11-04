@@ -13,6 +13,8 @@ from sqlalchemy.orm import sessionmaker
 from faker import Faker
 import random
 import numpy as np
+from fastapi.middleware.cors import CORSMiddleware
+
 
 def generate_random_data():
     fake = Faker()
@@ -35,6 +37,16 @@ DBUSER = os.environ['DBUSER']
 DBNAME = os.environ['DBNAME']
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 @app.get("/helloworld")
 async def helloworld():
     return {"message": "Hello World"}
@@ -172,7 +184,9 @@ async def getAllData():
         result[i[0]] = {
             'id' : i[0],
             'name' : i[1],
-            'lastname' : i[2]
+            'lastname' : i[2],
+            'height' : i[3],
+            'weight' : i[4]
         }
     json_compatible_item_data = jsonable_encoder(result)
     return JSONResponse(content=json_compatible_item_data)
