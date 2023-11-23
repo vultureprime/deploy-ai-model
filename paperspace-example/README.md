@@ -1,4 +1,7 @@
 ## Update 
+0.1.2 
+- Move Tutorial openai-langchain-basic-RAG on [Paperspace](https://paperspace.com/) to [GitHub](https://github.com/vultureprime/ai-web-backend)
+
 0.0.4
 - Update Tutorial Openai-langchain-basic-RAG on [Paperspace](https://paperspace.com/)
 
