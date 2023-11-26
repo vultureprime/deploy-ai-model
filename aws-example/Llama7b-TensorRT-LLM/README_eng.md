@@ -41,7 +41,7 @@ If you want to install on other GPU, you can check GPU-Architecture (Compute Cap
 If you don't use Parameter ``` CUDA_ARCHS ``` TensorRT-LLM will install all GPU-Architecture that support TensorRT-LLM and it will take more than 1 hour.
 
 ```
-apt-get update && apt-get -y install git git-lfs && git clone https://github.com/NVIDIA/TensorRT-LLM.git && cd TensorRT-LLM && git submodule update --init --recursive && git lfs install && git lfs pull && make -C docker release_build CUDA_ARCHS="86-real" && make -C docker release_run
+apt-get update && apt-get -y install git git-lfs && git submodule update --init --recursive && git lfs install && git lfs pull && make -C docker release_build CUDA_ARCHS="86-real" && make -C docker release_run
 ```
 
 6. After enter docker and go to examples/llama.
