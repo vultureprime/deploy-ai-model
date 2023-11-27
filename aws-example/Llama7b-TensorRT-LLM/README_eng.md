@@ -24,9 +24,10 @@ fallocate -l 128G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon
 git clone https://github.com/NVIDIA/TensorRT-LLM.git && cd TensorRT-LLM 
 ```
 
-4.1 Temporary Fix TensorRT-LLM Team has fixed the Dockerfile but not yet release, so we need to fix it manually by edit TensorRT-LLM/docker/common/install_bash.sh
-[Issue447](https://github.com/NVIDIA/TensorRT-LLM/issues/447)
+~4.1 Temporary Fix TensorRT-LLM Team has fixed the Dockerfile but not yet release, so we need to fix it manually by edit TensorRT-LLM/docker/common/install_bash.sh
+[Issue447](https://github.com/NVIDIA/TensorRT-LLM/issues/447)~
 
+Already Fixed in [a21e2f8](https://github.com/NVIDIA/TensorRT-LLM/commit/a21e2f85178111fed9812bb88c2cc7411b25f0ba)
 ```
 #pip install mpi4py
 pip install git+https://github.com/Shixiaowei02/mpi4py.git@fix-setuptools-version

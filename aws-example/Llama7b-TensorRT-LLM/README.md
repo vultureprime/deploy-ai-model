@@ -27,9 +27,12 @@ fallocate -l 128G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon
 git clone https://github.com/NVIDIA/TensorRT-LLM.git && cd TensorRT-LLM 
 ```
 
-4.1 แก้ไข ชั่วคราว ทางทีมพัฒนา TensorRT-LLM ได้แก้ไขไฟล์ Docker แล้ว แต่ยังไม่ได้ทำการ Release ดังนั้นจึงต้อง
+~4.1 แก้ไข ชั่วคราว ทางทีมพัฒนา TensorRT-LLM ได้แก้ไขไฟล์ Docker แล้ว แต่ยังไม่ได้ทำการ Release ดังนั้นจึงต้อง
 ทำการแก้ไขไฟล์ Docker ใน TensorRT-LLM/docker/common/install_bash.sh [Issue447](https://github.com/NVIDIA/TensorRT-LLM/issues/447)
-ให้เป็นดังนี้
+ให้เป็นดังนี้~
+
+แก้ไขเรียบร้อย [a21e2f8](https://github.com/NVIDIA/TensorRT-LLM/commit/a21e2f85178111fed9812bb88c2cc7411b25f0ba)
+
 ```
 #pip install mpi4py
 pip install git+https://github.com/Shixiaowei02/mpi4py.git@fix-setuptools-version
